@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/pombagiras/melusine/refs/heads/main/Al%C3%AA%20(3)%20(3)%20(1).png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/pombagiras/melusine/refs/heads/main/Al%C3%AA%20(3)%20(3)%20(1).png">
+    
+    <title>ALEXIA MELUSINE | ALMAS DE POMBAGIRA • Rito de Passagem</title>
+    
+    <meta name="description" content="Direção de arte visceral e o arquétipo do feminino proibido. Não é apenas um link, é um rito de passagem. Laroyê, Exú Mulher.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://pombagiras.github.io/melusine-oficial/">
+    <meta property="og:title" content="ALEXIA MELUSINE | ALMAS DE POMBAGIRA">
+    <meta property="og:description" content="Direção de arte visceral e o arquétipo do feminino proibido. Laroyê, força da encruzilhada.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Ultra%20(1).png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Ultra%20(1).png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        :root {
+            --deep-void: #030001;
+            --carmesim: #aa2e2e;
+            --carmesim-glow: rgba(170, 46, 46, 0.6);
+            --vinho-sangue: #5a0a0a;
+            --roxo-oculto: #1f032b;
+            --vidro-ritual: rgba(10, 5, 15, 0.55);
+            --vidro-forte: rgba(0, 0, 0, 0.7);
+            --borda-fogo: rgba(170, 46, 46, 0.35);
+            --brilho-texto: rgba(255, 245, 220, 0.9);
+            --transition-cult: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+        }
+
+        ::selection {
+            background: var(--carmesim);
+            color: #fff;
+            text-shadow: 0 0 8px black;
+        }
+
+        body {
+            background: var(--deep-void);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--brilho-texto);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* overlay místico + imagem de fundo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 30% 20%, rgba(90, 10, 10, 0.25) 0%, transparent 55%),
+                url('https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Cavpa%20(4).jpeg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            filter: brightness(0.85) contrast(1.08);
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 40%, #020001 85%);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .vortex-container {
+            width: 100%;
+            max-width: 520px;
+            margin: 28px 18px;
+            position: relative;
+            backdrop-filter: blur(2px);
+        }
+
+        /* CABEÇALHO COM ANIMAÇÃO SUTIL */
+        .profile-sacral {
+            text-align: center;
+            padding: 16px 0 28px 0;
+            position: relative;
+        }
+
+        .avatar-moldura {
+            display: inline-block;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--carmesim), var(--roxo-oculto));
+            padding: 3px;
+            box-shadow: 0 0 25px var(--carmesim-glow);
+            transition: var(--transition-cult);
+        }
+
+        .avatar-moldura:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 35px #aa2e2e;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 2px solid rgba(255, 215, 170, 0.3);
+        }
+
+        .profile-sacral h1 {
+            font-size: 1.85rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            background: linear-gradient(135deg, #fff0e0, #e6b8a2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 6px rgba(170, 46, 46, 0.4);
+            margin-top: 18px;
+            word-break: keep-all;
+        }
+
+        .sangue-tag {
+            color: var(--carmesim);
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: rgba(0,0,0,0.5);
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 60px;
+            backdrop-filter: blur(4px);
+            margin-top: 8px;
+        }
+
+        .frase-encanto {
+            font-style: italic;
+            font-weight: 400;
+            font-size: 0.8rem;
+            margin-top: 12px;
+            opacity: 0.85;
+            border-left: 2px solid var(--carmesim);
+            border-right: 2px solid var(--carmesim);
+            display: inline-block;
+            padding: 0 12px;
+        }
+
+        /* BENTO GRID INOVADO + MICRO-INTERAÇÕES */
+        .bento-ritual {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .bento-card {
+            background: var(--vidro-ritual);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--borda-fogo);
+            border-radius: 28px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #fef3e4;
+            transition: var(--transition-cult);
+            padding: 18px 12px;
+            text-align: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* efeito de brasa ao hover */
+        .bento-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(170, 46, 46, 0.2), transparent);
+            transition: 0.4s ease;
+            pointer-events: none;
+        }
+
+        .bento-card:hover::after {
+            left: 100%;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--carmesim);
+            background: rgba(26, 5, 35, 0.7);
+            box-shadow: 0 12px 22px -12px rgba(170, 46, 46, 0.5);
+        }
+
+        .icon-svg {
+            width: 34px;
+            height: 34px;
+            fill: #f0cfb0;
+            transition: transform 0.2s;
+        }
+
+        .bento-card:hover .icon-svg {
+            transform: scale(1.05);
+            fill: #ffc9a2;
+        }
+
+        .card-label {
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: rgba(0,0,0,0.4);
+            padding: 5px 10px;
+            border-radius: 100px;
+            width: fit-content;
+        }
+
+        .featured-card {
+            grid-column: span 2;
+            background: linear-gradient(125deg, rgba(26, 3, 38, 0.8), rgba(70, 10, 25, 0.6));
+            border: 1.5px solid #b33;
+            padding: 22px 12px;
+            border-radius: 42px 20px 42px 20px;
+            flex-direction: row;
+            gap: 14px;
+            backdrop-filter: blur(14px);
+        }
+
+        .featured-card .icon-svg {
+            width: 38px;
+            height: 38px;
+        }
+
+        .featured-card .card-label {
+            font-size: 0.85rem;
+            background: rgba(170, 46, 46, 0.6);
+        }
+
+        /* ACORDEÃO EVOLUÍDO COM GLOW */
+        .accordion-misterio {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .accordeon-piece {
+            background: var(--vidro-forte);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(170, 46, 46, 0.5);
+            border-radius: 32px;
+            transition: all 0.2s;
+        }
+
+        .acc-header {
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            color: #ffe6d5;
+            transition: 0.2s;
+        }
+
+        .acc-header span:first-child {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .acc-header span:last-child {
+            font-size: 1.8rem;
+            font-weight: 300;
+            transition: transform 0.2s;
+        }
+
+        .accordeon-piece.active .acc-header span:last-child {
+            transform: rotate(45deg);
+        }
+
+        .acc-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s cubic-bezier(0.33, 1, 0.68, 1);
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 0 0 28px 28px;
+        }
+
+        .inner-link-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .inner-link-list a {
+            padding: 16px 24px;
+            color: #e6cfb5;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            border-bottom: 1px solid rgba(255, 70, 70, 0.2);
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .inner-link-list a:hover {
+            background: rgba(170, 46, 46, 0.3);
+            color: white;
+            padding-left: 32px;
+            letter-spacing: 1.8px;
+        }
+
+        .trans-highlight {
+            background: linear-gradient(90deg, #55cdfc20, #f7a8b820);
+            border-left: 4px solid #f7a8b8;
+            font-weight: 800;
+        }
+
+        .footer-sigil {
+            text-align: center;
+            font-size: 0.6rem;
+            margin-top: 30px;
+            opacity: 0.6;
+            letter-spacing: 1px;
+        }
+
+        /* responsivo + suave */
+        @media (max-width: 450px) {
+            .vortex-container { margin: 16px 12px; }
+            .bento-card { padding: 14px 8px; }
+            .featured-card { padding: 18px 10px; }
+            .profile-sacral h1 { font-size: 1.4rem; }
+        }
+
+        @keyframes pulse-glow {
+            0% { text-shadow: 0 0 0px var(--carmesim);}
+            100% { text-shadow: 0 0 6px var(--carmesim);}
+        }
+    </style>
+</head>
+<body>
+
+<div class="vortex-container">
+    <div class="profile-sacral">
+        <div class="avatar-moldura">
+            <img src="https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Reds%20(3).png" class="profile-img" alt="Alexia Melusine - Almas de Pombagira">
+        </div>
+        <h1>ALEXIA MELUSINE</h1>
+        <div class="sangue-tag">⛧ ALMAS DE POMBAGIRA ⛧</div>
+        <div class="frase-encanto">"O medo é uma cela que eu abro por dentro."</div>
+    </div>
+
+    <!-- BENTO GRID COMPLETO + TODOS OS LINKS PRINCIPAIS -->
+    <div class="bento-ritual">
+        <!-- Portal principal em destaque -->
+        <a href="https://bio.site/AlmasdePombagira" class="bento-card featured-card" onclick="vibrarCurto()">
+            <svg class="icon-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            <span class="card-label">PORTAL OFICIAL</span>
+            <span style="font-weight:600; font-size:0.75rem;">bio.site/AlmasdePombagira</span>
+        </a>
+
+        <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" class="bento-card" onclick="vibrarCurto()">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-5.46-4.45-9.91-9.91-9.91z"/></svg>
+            <span class="card-label">WHATSAPP</span>
+            <span style="font-size: 0.7rem;">Canal Exclusivo</span>
+        </a>
+
+        <a href="https://t.me/pomba_giras" class="bento-card" onclick="vibrarCurto()">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.12 7.14-.14.72-.41.96-.66.98-.56.05-1-.38-1.54-.74-.84-.57-1.32-.92-2.14-1.46-.94-.63-.33-.98.21-1.53.14-.14 2.56-2.34 2.61-2.55.01-.03.01-.13-.05-.18-.06-.06-.16-.04-.23-.02-.1.02-1.69 1.07-4.77 3.14-.45.31-.86.46-1.23.45-.4 0-1.18-.22-1.76-.41-.71-.23-1.27-.35-1.22-.75.02-.21.32-.42.89-.64 3.48-1.51 5.8-2.52 6.96-3.01 3.32-1.4 4.01-1.64 4.46-1.65.1 0 .32.02.46.14.12.1.16.23.18.33.01.07.02.2.01.31z"/></svg>
+            <span class="card-label">TELEGRAM</span>
+        </a>
+
+        <a href="https://www.youtube.com/@almasdepombagira" class="bento-card" onclick="vibrarCurto()">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09v1.68c0 .6-.03 1.29-.1 2.09-.06.8-.15 1.43-.28 1.9-.17.6-.51 1.05-.99 1.35-.48.3-.98.41-1.5.34-1.07-.15-2.2-.26-3.41-.34-1.21-.08-2.39-.12-3.53-.12s-2.32.04-3.53.12c-1.21.08-2.34.19-3.41.34-.52.07-1.02-.04-1.5-.34-.48-.3-.82-.75-.99-1.35-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09V11.1c0-.6.03-1.29.1-2.09.06-.8.15-1.43.28-1.9.17-.6.51-1.05.99-1.35.48-.3.98-.41 1.5-.34 1.07.15 2.2.26 3.41.34 1.21.08 2.39.12 3.53.12s2.32-.04 3.53-.12c1.21-.08 2.34-.19 3.41-.34.52-.07 1.02.04 1.5.34.48.3.82.75.99 1.35z"/></svg>
+            <span class="card-label">YOUTUBE</span>
+        </a>
+
+        <a href="https://www.tiktok.com/@almasdepombagira?lang=pt-BR" class="bento-card" onclick="vibrarCurto()">
+            <svg class="icon-svg" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.01-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92 0 5.84-.02 8.75-.03 1.7-.54 3.41-1.62 4.77-1.08 1.36-2.71 2.22-4.42 2.31-1.71.09-3.48-.28-4.9-1.22-1.42-.94-2.45-2.48-2.69-4.14-.24-1.66.19-3.41 1.25-4.75 1.06-1.34 2.63-2.18 4.29-2.3.02 1.31.01 2.62.02 3.93-1.05.02-2.13.39-2.9 1.1-.77.71-1.16 1.83-1.03 2.86.13 1.03.88 1.95 1.83 2.32.95.37 2.1.25 2.94-.35.84-.6 1.3-1.66 1.19-2.68.01-4.04-.01-8.08.01-12.12-.02 0-.01 0-.01-.02z"/></svg>
+            <span class="card-label">TIKTOK</span>
+        </a>
+    </div>
+
+    <!-- ACORDEÃO COM TODOS OS DEMAIS LINKS E INOVAÇÕES -->
+    <div class="accordion-misterio">
+        <!-- REDES SOCIAIS COMPLETAS -->
+        <div class="accordeon-piece">
+            <div class="acc-header" onclick="toggleAccordionModern(this)">
+                <span>🔻 REDES & COMUNIDADE</span>
+                <span>+</span>
+            </div>
+            <div class="acc-content">
+                <div class="inner-link-list">
+                    <a href="https://www.instagram.com/almasdepombagira/" target="_blank">📸 Instagram Oficial</a>
+                    <a href="https://www.threads.com/@almasdepombagira" target="_blank">🧵 Threads • Manifestos</a>
+                    <a href="https://www.kwai.com/@AlexiaRosadeFogo" target="_blank">🔥 Kwai • Fogo Sagrado</a>
+                    <a href="https://discord.gg/gWZP8R7Dqu" target="_blank">🎙️ Discord • Ordem das Melusines</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTEÚDO & PODCAST + SUBSTACK -->
+        <div class="accordeon-piece">
+            <div class="acc-header" onclick="toggleAccordionModern(this)">
+                <span>🎧 PODCAST & ESCRITOS</span>
+                <span>+</span>
+            </div>
+            <div class="acc-content">
+                <div class="inner-link-list">
+                    <a href="https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ" target="_blank">🎙️ Spotify • Almas de Pombagira</a>
+                    <a href="https://substack.com/@alexiamelusine" target="_blank">📜 Substack • Cartas da Encruzilhada</a>
+                    <a href="https://www.youtube.com/@almasdepombagira" target="_blank">📺 YouTube • Rituais em Imagem</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- DESENVOLVIMENTO / GITHUB + TRANS ORGULHO -->
+        <div class="accordeon-piece">
+            <div class="acc-header" onclick="toggleAccordionModern(this)">
+                <span>⚡ CODEX & TECH TRANS</span>
+                <span>+</span>
+            </div>
+            <div class="acc-content">
+                <div class="inner-link-list">
+                    <a href="https://github.com/pombagiras" target="_blank">🐙 GitHub • Pombagiras Labs</a>
+                    <a href="https://github.com/alexialuzdeferro" target="_blank">⚙️ GitHub • Luz de Ferro (Arte Dev)</a>
+                    <a href="https://github.com/Orgulho-Trans" target="_blank" class="trans-highlight">🏳️‍⚧️ ORGULHO TRANS • Tech Disruptiva</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- INOVAÇÃO EXTRA: ACESSO RÁPIDO AOS CANAIS SECUNDÁRIOS -->
+        <div class="accordeon-piece">
+            <div class="acc-header" onclick="toggleAccordionModern(this)">
+                <span>🌙 PORTAL DA SOMBRA</span>
+                <span>+</span>
+            </div>
+            <div class="acc-content">
+                <div class="inner-link-list">
+                    <a href="https://bio.site/AlmasdePombagira" target="_blank">✨ Central Bio Linktree Místico</a>
+                    <a href="https://t.me/pomba_giras" target="_blank">🕯️ Telegram • Câmaras de Dialogo</a>
+                    <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank">📱 WhatsApp Channel • Vibrações Diárias</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-sigil">
+        ✦ ALMAS DE POMBAGIRA • DIREÇÃO DE ARTE VISCERAL ✦ <br>
+        Laroyê, Exú Mulher — o feminino proibido pulsa em cada byte.
+    </div>
+</div>
+
+<script>
+    // função de feedback tátil + modernidade (vibração curta para mobile)
+    function vibrarCurto() {
+        if (navigator.vibrate) navigator.vibrate(12);
+    }
+
+    // função para acordeão com animação fluida e ícone +/-
+    function toggleAccordionModern(headerElement) {
+        const accordionItem = headerElement.closest('.accordeon-piece');
+        if (!accordionItem) return;
+        
+        const contentDiv = accordionItem.querySelector('.acc-content');
+        const iconSpan = headerElement.querySelector('span:last-child');
+        const isActive = accordionItem.classList.contains('active');
+        
+        // fecha outros opcionais para manter experiencia limpa? mantém UX livre mas pode opcional, mantivemos mais livre
+        if (!isActive) {
+            // Fecha outros itens para não poluir visual (opcional elegante)
+            document.querySelectorAll('.accordeon-piece').forEach(item => {
+                if (item !== accordionItem && item.classList.contains('active')) {
+                    item.classList.remove('active');
+                    const otherContent = item.querySelector('.acc-content');
+                    const otherIcon = item.querySelector('.acc-header span:last-child');
+                    if (otherContent) otherContent.style.maxHeight = null;
+                    if (otherIcon) otherIcon.innerText = '+';
+                }
+            });
+        }
+        
+        accordionItem.classList.toggle('active');
+        
+        if (accordionItem.classList.contains('active')) {
+            contentDiv.style.maxHeight = contentDiv.scrollHeight + "px";
+            if (iconSpan) iconSpan.innerText = '−';
+        } else {
+            contentDiv.style.maxHeight = null;
+            if (iconSpan) iconSpan.innerText = '+';
+        }
+        
+        // feedback háptico sutil para toque
+        if (navigator.vibrate) navigator.vibrate(8);
+    }
+    
+    // garantir que accordeões fechem ao carregar a página, mas mantem primeiro fechado
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.accordeon-piece .acc-content').forEach(content => {
+            content.style.maxHeight = null;
+        });
+        document.querySelectorAll('.accordeon-piece').forEach(piece => {
+            piece.classList.remove('active');
+            const icon = piece.querySelector('.acc-header span:last-child');
+            if(icon) icon.innerText = '+';
+        });
+    });
+    
+    // efeito hover/parallax inovador? pequena vibração de borda
+    const cards = document.querySelectorAll('.bento-card');
+    cards.forEach(card => {
+        card.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => { this.style.transform = ''; }, 120);
+        });
+    });
+</script>
+</body>
+</html>
